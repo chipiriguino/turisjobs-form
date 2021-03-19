@@ -66,37 +66,41 @@ class Form extends Component {
           <p>Rellena los campos con la información necesaria para crear una cuenta en nuestra web.</p>
           </div>
         <form onSubmit={this.handleFormSubmit}>
+        <label className="name-label">Nombre</label>
           <div className="labels-align">
-          <label>Nombre</label><input  type="text" name="fullname" placeholder="Indica tu nombre" value={fullname}  onChange={e => this.handleChange(e)}  required/>
+          <input  type="text" name="fullname" placeholder="Indica tu nombre" value={fullname}  onChange={e => this.handleChange(e)}  required/>
               {this.state.isError.fullname.length > 0 && (
               <span >{this.state.isError.fullname}</span>
               )}
           </div>
+          <label className="name-label">Apellidos</label>
           <div className="labels-align" >
-          <label>Apellidos</label><input  type="text" name="lastname" placeholder="Indica tu apellido/s" value={lastname}  onChange={e => this.handleChange(e)}  required/>
+          <input  type="text" name="lastname" placeholder="Indica tu apellido/s" value={lastname}  onChange={e => this.handleChange(e)}  required/>
               {this.state.isError.lastname.length > 0 && (
               <span >{this.state.isError.lastname}</span>
               )}
           </div>
+          <label className="name-label">Contraseña</label>
           <div className="labels-align" >
-          <label>Contraseña</label><input type="password" name="password" placeholder="Indica tu contraseña" value={password}  onChange={e => this.handleChange(e)}  required/>
+          <input type="password" name="password" placeholder="Indica tu contraseña" value={password}  onChange={e => this.handleChange(e)}  required/>
               {this.state.isError.lastname.length > 0 && (
               <span >{this.state.isError.lastname}</span>
               )}
           </div>
+          <label className="name-label">E-mail</label>
           <div className="labels-align" >
-              <label>E-mail</label><input  type="email" name="email" placeholder="Indica tu email" value={email} onChange={this.handleChange} required/>
+              <input  type="email" name="email" placeholder="Indica tu email" value={email} onChange={this.handleChange} required/>
               {this.state.isError.email.length > 0 && (
               <span >{this.state.isError.email}</span>
               )}
           </div>
-          
+          <label className="name-label">Ciudad de nacimiento</label>
           <div className="labels-align">
-          <label>Ciudad de nacimiento</label><select name="select" placeholder="Selecciona tu ciudad de nacimiento">
-  <option value="value1">Madrid</option>
-  <option value="value2" selected>Barcelona</option>
-  <option value="value3">Valencia</option>
-  <option value="value4">Sevilla</option>
+          <select name="select" placeholder="Selecciona tu ciudad de nacimiento">
+  <option value="Madrid">Madrid</option>
+  <option value="Barcelona" selected>Barcelona</option>
+  <option value="Valencia">Valencia</option>
+  <option value="Sevilla">Sevilla</option>
 </select>
 </div>    
 <div className="align-button">   
@@ -104,7 +108,7 @@ class Form extends Component {
           <div >
           {this.state.warning !== '' } 
           <div>
-          <input onClick = {this.fullname} className="button"
+          <input onClick={()=>{alert(this.fullname+ " te has registrado con éxito")}} className="button"
                 type="submit"
                 value="REGISTRARME"
               />
