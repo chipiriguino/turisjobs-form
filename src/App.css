@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-style: "Roboto";
+  color: #4c4c4c;
+  font-size: 16px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 36px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  font-size: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.text-pre-form {
+  margin: 10px 0 15px 43px;
+}
+.labels-align {
   display: flex;
   flex-direction: column;
+  padding-bottom: 30px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: left;
+}
+label {
+  font-size: 20px;
+  margin-bottom: 8px;
+  
+}
+input {
+  width: 94%;
+  height: 40px;
+  color: #4c4c4c;
+}
+select {
+  width: 94.4%;
+  height: 45px;
+  color: #4c4c4c;
+}
+form {
+  margin-top: 30px;
+}
+.check-box {
+  height: 15px;
+  width: 2%;
+}
+.button {
+  padding: 0;
+  width: 16%;
+  height: 65px;
+  background-color: #ef5350;
+  border-radius: 30px;
+  border: #ef5350;
   color: white;
+  font-weight: bold;
+  margin-top: 20px;
 }
-
-.App-link {
-  color: #61dafb;
+.align-button {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-top: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 23px;
+    margin-bottom: 5px;
   }
-  to {
-    transform: rotate(360deg);
+  p {
+    font-size: 15px;
+  }
+  .text-pre-form {
+    margin: 10px 0 15px 17px;
+  }
+  .align-button {
+    margin-left: 20px;
+  }
+  .button {
+    width: 46%;
+    margin-bottom: 10px;
+  }
+  .check-box {
+    height: 15px;
+    width: 5%;
+  }
+  label {
+    font-size: 12px;
   }
 }
