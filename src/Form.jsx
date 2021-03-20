@@ -7,6 +7,7 @@ class Form extends Component {
       fullname: "",
       lastname: "",
       email: "",
+      password: "",
       checkbox: false,
       isError: {
         fullname: "",
@@ -23,7 +24,7 @@ class Form extends Component {
       this.state.fullname !== "" &&
       this.state.lastname !== "" &&
       this.state.email !== "" &&
-      this.state.checkbox 
+      this.state.checkbox
     ) {
       return alert(fullname + " te has registrado con éxito");
     }
@@ -47,7 +48,10 @@ class Form extends Component {
             : "";
         break;
       case "password":
-        isError.password = value.length < 6 ? "Debe completar este campo" : "";
+        isError.password =
+          value.length < 6
+            ? "Debe completar este campo con mínimo 6 caracteres"
+            : "";
         break;
       case "email":
         isError.email = regExp.test(value) ? "" : "Este mail no es válido";
@@ -129,8 +133,8 @@ class Form extends Component {
               onChange={(e) => this.handleChange(e)}
               required
             />
-            {this.state.isError.lastname.length > 0 && (
-              <span>{this.state.isError.lastname}</span>
+            {this.state.isError.password.length > 0 && (
+              <span>{this.state.isError.password}</span>
             )}
           </div>
           <label className="name-label">E-mail</label>
@@ -149,14 +153,12 @@ class Form extends Component {
           </div>
           <label className="name-label">Ciudad de nacimiento</label>
           <div className="labels-align">
-            <select
-              name="select"
-            >
-                <option value="Default">Selecciona tu ciudad de nacimiento</option>
-              <option value="Madrid">Madrid</option>
-              <option value="Barcelona">
-                Barcelona
+            <select name="select">
+              <option disabled selected>
+                Selecciona tu ciudad de nacimiento
               </option>
+              <option value="Madrid">Madrid</option>
+              <option value="Barcelona">Barcelona</option>
               <option value="Valencia">Valencia</option>
               <option value="Sevilla">Sevilla</option>
             </select>
