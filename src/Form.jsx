@@ -26,7 +26,7 @@ class Form extends Component {
       this.state.email !== "" &&
       this.state.checkbox
     ) {
-      return alert(fullname + " te has registrado con éxito");
+      return alert("Bienvenido "+ fullname + " te has registrado con éxito");
     }
   };
   handleChange = (event) => {
