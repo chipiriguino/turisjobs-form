@@ -26,7 +26,7 @@ class Form extends Component {
       this.state.email !== "" &&
       this.state.checkbox
     ) {
-      return alert("Bienvenido "+ fullname + " te has registrado con éxito");
+      return alert("Bienvenido " + fullname + " te has registrado con éxito");
     }
   };
   handleChange = (event) => {
@@ -49,8 +49,8 @@ class Form extends Component {
         break;
       case "password":
         isError.password =
-          value.length < 6
-            ? "Debe completar este campo con mínimo 6 caracteres"
+          value.length < 2
+            ? "Debe completar este campo con mínimo 2 caracteres"
             : "";
         break;
       case "email":
@@ -95,7 +95,7 @@ class Form extends Component {
           </p>
         </div>
         <form onSubmit={this.handleFormSubmit}>
-          <label className="name-label">Nombre</label>
+          <label>Nombre</label>
           <div className="labels-align">
             <input
               type="text"
@@ -109,7 +109,7 @@ class Form extends Component {
               <span>{this.state.isError.fullname}</span>
             )}
           </div>
-          <label className="name-label">Apellidos</label>
+          <label>Apellidos</label>
           <div className="labels-align">
             <input
               type="text"
@@ -123,7 +123,7 @@ class Form extends Component {
               <span>{this.state.isError.lastname}</span>
             )}
           </div>
-          <label className="name-label">Contraseña</label>
+          <label>Contraseña</label>
           <div className="labels-align">
             <input
               type="password"
@@ -137,7 +137,7 @@ class Form extends Component {
               <span>{this.state.isError.password}</span>
             )}
           </div>
-          <label className="name-label">E-mail</label>
+          <label>E-mail</label>
           <div className="labels-align">
             <input
               type="email"
@@ -151,7 +151,7 @@ class Form extends Component {
               <span>{this.state.isError.email}</span>
             )}
           </div>
-          <label className="name-label">Ciudad de nacimiento</label>
+          <label>Ciudad de nacimiento</label>
           <div className="labels-align">
             <select name="select">
               <option disabled selected>
@@ -173,10 +173,9 @@ class Form extends Component {
                 onChange={(e) => this.handleChange(e)}
                 required
               />{" "}
-              Acepto las Condiciones legales de la web que me registro
+              Acepto las Condiciones legales de la web a la que me registro
             </label>
             <div>
-              {this.state.warning !== ""}
               <div>
                 <input
                   onClick={() => {
